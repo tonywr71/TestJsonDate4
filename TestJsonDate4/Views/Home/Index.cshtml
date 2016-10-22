@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+  <title></title>
+</head>
+<body ng-controller="Main as vm">
+
+  <input type="text" ng-model="vm.food" placeholder="Enter food" />
+
+  <p>Sriracha sauce is great with {{vm.food}}!</p>
+  <p>The date is: {{vm.theDate }}</p>
+  <h4>Popup</h4>
+  <form ng-submit="vm.ProcessForm()">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="input-group">
+          <input type="text"
+                 class="form-control"
+                 uib-datepicker-popup="dd-MMMM-yyyy hh:mm:ss"
+                 ng-model="vm.theDate2"
+                 is-open="vm.popupOpened"
+                 datepicker-options="vm.dateOptions"
+                 ng-required="true"
+                 close-text="Close"
+                 alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="vm.openPopup()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button>Save</button>
+      </div>
+    </div>
+  </form>
+  <script src="../Scripts/angular.min.js"></script>
+  <script src="../Scripts/angular-ui/ui-bootstrap.min.js"></script>
+  <script src="../app/app.js"></script>
+  <script src="../app/main.js"></script>
+
+</body>
+</html>
